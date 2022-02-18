@@ -1,0 +1,23 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+div {
+    margin: 0px;
+    padding: 0px;
+    width:'100%'; 
+    height:'100%'; 
+    background-color:'#253535';
+}

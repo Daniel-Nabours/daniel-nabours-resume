@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from 'react';
+import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
+ 
+
 
 function App() {
+
+  
+
+  const parallaxRef = useRef<IParallax>(null!)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{width:'100%', height:'100%', background:'#253535'}} data-testid={"app"} className="App">
+      <Parallax ref={parallaxRef} data-testid={"pageContainer"} pages={5}>
+        <ParallaxLayer style={{ backgroundColor: 'green', backgroundSize: 'cover',}} offset={0.5} speed={1} data-testid={"page1"}>hello 1</ParallaxLayer>
+        <ParallaxLayer offset={1} speed={1} data-testid={"page2"}>hello 2</ParallaxLayer>
+        <ParallaxLayer offset={1.5} speed={1} data-testid={"page3"}>hello 3</ParallaxLayer>
+        <ParallaxLayer offset={2} speed={1} data-testid={"page4"}>hello 4</ParallaxLayer>
+        <ParallaxLayer offset={2.5} speed={1} data-testid={"page5"}>hello 5</ParallaxLayer>
+      </Parallax>
     </div>
   );
 }
