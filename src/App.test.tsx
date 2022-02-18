@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
-import moxios from 'moxios'
+import App from './App'; 
 
 describe('the main page', () => {
   it('renders', ()=>{
