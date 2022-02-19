@@ -6,6 +6,7 @@ import logo from './res/hyve.svg'
 import { CloudSprites } from './components/CloudSprites';
 import { SkillsSection } from './components/SkillsSection';
 import { Socials } from './components/Socials';
+import PlayButton from './util/PlayButton';
 
 const sta = [
   "In my first squadron they had a policy of not throwing the new programmers into dev positions, we all had to start out as legacy system testing.",
@@ -43,17 +44,11 @@ const hyve = [
 
 function App() {
 
-  const music = React.useMemo(() => new Audio(`/lofi.mp3`), [])
   const [playing, setPlaying] = React.useState(false)
   const alignCenter = { display: 'flex', alignItems: 'center' }
   const parallaxRef = useRef<IParallax>(null!)
 
-  function playMusic() {
-    if (!playing) {
-      music.play()
-      setPlaying(true)
-    }
-  }
+ 
 
   // const navigate = () => {
   //   let nextPage: number = 0
@@ -67,8 +62,8 @@ function App() {
 
   return (
     <div className="background" > 
-      <Parallax onScroll={() => { playMusic(); }} onClick={() => {
-        playMusic();
+      <Parallax
+        onClick={() => { 
         //navigate();
       }} ref={parallaxRef} style={{ backgroundImage: `url(${stars})` }} pages={50}>
 
@@ -76,7 +71,9 @@ function App() {
 
         <ParallaxLayer offset={0} speed={0.5} style={{ ...alignCenter, justifyContent: 'center' }}>
           <p className="section-header">Daniel Nabours
-            <p style={{ fontSize: 22 }}>Software Engineer</p>
+            <p style={{ fontSize: 28 }}>Software Engineer
+              <p style={{ fontSize: 14 }}>Click or scroll to navigate</p>
+            </p>
           </p>
         </ParallaxLayer>
         {/* header */}
@@ -84,9 +81,9 @@ function App() {
           <p className="section-header">Work Experience</p>
         </ParallaxLayer>
         {/* awacs svg */}
-        <ParallaxLayer offset={4} factor={1} sticky={{ start: 2, end: 11 }} speed={-1.2} style={{ bottom: '80%', opacity: 0.4 }}>
+        {/* <ParallaxLayer offset={4} factor={1} sticky={{ start: 2, end: 11 }} speed={-1.2} style={{ bottom: '80%', opacity: 0.4 }}>
           <img alt="An e-3 sentry in the sky" className='floating' src={awacs} />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
         {/* hyve svg */}
         <ParallaxLayer offset={8} factor={1} sticky={{ start: 12, end: 13 }} speed={-1.2} style={{ bottom: '80%', opacity: 0.4 }}>
           <img alt="7 teal hexagons arranged in a beehive patter" src={logo} />
@@ -103,7 +100,7 @@ function App() {
             {sta.map(s => (<p key={s}>{s}</p>))}
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={3} speed={1} sticky={{ start: 4, end: 3 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
+        <ParallaxLayer offset={3} speed={1} sticky={{ start: 4, end: 5 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
           <div className="blurb parallax sticky ">
             <p>Junior Software Engineer</p>
           </div>
@@ -166,9 +163,10 @@ function App() {
         </ParallaxLayer>
         {/* skills section */}
 
-        <ParallaxLayer offset={0} sticky={{ start: 0, end: 50 }} style={{height:100, width:100}} speed={1}>
-          <Socials /> 
-        </ParallaxLayer>
+        <ParallaxLayer offset={0} sticky={{ start: 0, end: 50 }} style={{ height: 100, width: "100%", display:"flex" }} speed={0} >
+          <div style={{position:'absolute', left:5, top:5}}><Socials /></div> 
+          <div style={{position:'absolute', right:15, top:15}}><PlayButton /></div>
+        </ParallaxLayer>  
       </Parallax>
     </div>
   );

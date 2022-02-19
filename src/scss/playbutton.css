@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%; 
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  width: 150%;
+  height: 150%;
+  background: #d02a79;
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  width: 150%;
+  height: 150%;
+  background: #48287d;
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.button[paused="0"]:after {
+  animation: 1s animateBackground 1 forwards ease-out;
+}
+
+.button[paused="1"]:before {
+  animation: 1s animateBackground 1 forwards ease-out;
+}
+
+.shrink {
+  transform: scale(96%);
+  transition: transform 0.15s ease-in-out;
+}
+
+.play-shadow {
+  position: absolute;
+  background: transparent;
+  border-radius: 100%;
+  display: block;
+  width: 48px;
+  height: 48px;
+  top: 10px;
+  left: 10px;
+  overflow: hidden;
+  z-index: 1;
+  transition: box-shadow 1.5s ease-out;
+}
+
+@keyframes animateBackground {
+  from {
+    left: 50px;
+    top: 50px;
+  }
+  to {
+    left: -5px;
+    top: -5px;
+  }
+}
+
+.shapes {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.rectangle {
+  background: white;
+  width: 33.33%;
+  height: 0;
+  animation: 1s animateRectangle 1 reverse cubic-bezier(0.42, 0, 0.58, 1);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.rectangle[paused="1"] {
+  animation: 0.4s animatePlayRectangle 1 reverse ease-in-out;
+}
+
+.rectangle[paused="0"] {
+  animation: 0.4s animatePauseRectangle 1 forwards ease-in-out;
+  animation-delay: 0.5s;
+}
+
+@keyframes animatePlayRectangle {
+  0% {
+    height: 0;
+    left: 0;
+    bottom: 0;
+    transform: translate(0, 0) rotate(0deg) translate(0, 0);
+  }
+
+  100% {
+    left: 66%;
+    height: 100%;
+    transform: translate(0, 0) rotate(180deg) translate(0, 0);
+  }
+}
+
+@keyframes animatePauseRectangle {
+  0% {
+    height: 0;
+    left: 0;
+    bottom: 0;
+    transform: translate(0, 0) rotate(0deg) translate(0, 0);
+  }
+
+  100% {
+    left: 66%;
+    height: 100%;
+    transform: translate(0, 0) rotate(180deg) translate(0, 0);
+  }
+}
+
+.triangle {
+  background: white;
+  transform: rotate(270deg);
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(
+    0% 0%,
+    0% 33.33%,
+    50% 33.33%,
+    50% 33.33%,
+    100% 33.33%,
+    100% 0%
+  );
+}
+
+.triangle[paused="1"] {
+  animation: 1s animatePlayTriangle 1 forwards cubic-bezier(1, -0.11, 0, 1.1);
+  animation-delay: 0.75s;
+}
+
+.triangle[paused="0"] {
+  animation: 1s animatePauseTriangle 1 reverse cubic-bezier(1, -0.11, 0, 1.1);
+}
+
+@keyframes animatePlayTriangle {
+  0% {
+    clip-path: polygon(
+      0% 0%,
+      0% 33.33%,
+      50% 33.33%,
+      50% 33.33%,
+      100% 33.33%,
+      100% 0%
+    );
+  }
+  100% {
+    clip-path: polygon(0% 0%, 0% 0%, 50% 100%, 50% 100%, 100% 0%, 100% 0%);
+  }
+}
+
+@keyframes animatePauseTriangle {
+  0% {
+    clip-path: polygon(
+      0% 0%,
+      0% 33.33%,
+      50% 33.33%,
+      50% 33.33%,
+      100% 33.33%,
+      100% 0%
+    );
+  }
+  100% {
+    clip-path: polygon(0% 0%, 0% 0%, 50% 100%, 50% 100%, 100% 0%, 100% 0%);
+  }
+}
