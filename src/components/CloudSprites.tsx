@@ -1,9 +1,9 @@
 import { ParallaxLayer } from "@react-spring/parallax"
 import cloud from '../res/cloud.svg'
 
-export const CloudSprites = () => {
-    {/* clouds */ }
-   return (<>
+export const CloudSprites = () => { 
+  return (
+    <>
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
           <img className="floating" alt="a sprite of a bouncing cloud" src={cloud} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
           <img className="floating" alt="a sprite of a bouncing cloud" src={cloud} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
@@ -46,5 +46,6 @@ export const CloudSprites = () => {
           <img className="floating" alt="a sprite of a bouncing cloud" src={cloud} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
           <img className="floating" alt="a sprite of a bouncing cloud" src={cloud} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
-    </>)
+    </>
+  )
 }

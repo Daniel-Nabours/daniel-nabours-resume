@@ -49,7 +49,7 @@ function App() {
 
   const navigate = () => { 
     let page = Math.round((parallaxRef.current.current / window.innerHeight))  
-    if (page == 0) page += 1
+    if (page === 0) page += 1
     else if (page >= 1 && page <= 11) page += 1.67 
     else if (page > 11 && page <= 15) page +=2
     parallaxRef.current.scrollTo(page)

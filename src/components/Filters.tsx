@@ -27,6 +27,7 @@ export const Filters: React.FC<FilterProps> = ({ skills, active, setFiltered, se
             else return 0
         });
         setFiltered(f)
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [active])
 
     useEffect(() => {
@@ -36,6 +37,7 @@ export const Filters: React.FC<FilterProps> = ({ skills, active, setFiltered, se
                 prev.sort((a, b) => b.level - a.level)
             return [...n]
         })
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sortMethod])
 
     return (
