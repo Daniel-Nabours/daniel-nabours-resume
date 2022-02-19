@@ -165,3 +165,25 @@ button:focus {
     50%  { transform: translate(0, 15px); }
     100%   { transform: translate(0, -0px); }   
 }
+
+.hovering { 
+    animation-name: hovering;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+ 
+@keyframes hovering {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 5px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+.socials-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0.5rem;  
+  z-index: 1000;
+}
