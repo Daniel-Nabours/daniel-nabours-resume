@@ -32,6 +32,8 @@ const mySkills: skill[] = [
     { name: 'Redis', use: 'Database Technology', level: 0.148 },
     { name: 'PostgreSQL', use: 'Database Technology', level: 1 },
     { name: 'MongoDB', use: 'Database Technology', level: 0.440 },
+    { name: 'MySQL', use: 'Database Technology', level: 0.220 },
+    { name: 'MS SQL server', use: 'Database Technology', level: 0.520 },
 ]
 
 
@@ -57,7 +59,7 @@ export const SkillsSection: React.FC = () => {
                                 layout
                                 key={`${s.name}${s.level}`}
                                 className='card'>
-                                <h1>{s.name}</h1>
+                                <h1 style={{fontSize:'1rem'}}>{s.name}</h1>
                                 <Bar percent={s.level} />
                             </motion.div>
                         ))}

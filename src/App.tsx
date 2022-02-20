@@ -157,12 +157,21 @@ function App() {
         </ParallaxLayer>
         {/* skills section */}
 
-        <ParallaxLayer offset={0} sticky={{ start: 0, end: 50 }} style={{ height: 100, width: "100%", display:"flex" }} speed={0} >
+        <ParallaxLayer offset={0} sticky={window.innerWidth >= 600 ? { start: 0, end: 21 } : {start: 20, end:21}} style={{ height: 100, width: "100%", display:"flex" }} speed={0} >
           <div style={{position:'absolute', left:5, top:5}}><Socials /></div> 
           <div style={{position:'absolute', right:15, top:15}}><PlayButton /></div>
         </ParallaxLayer>
+
+        {/* only shown on mobile */}
+        {window.innerWidth <= 600 &&
+          <ParallaxLayer offset={0} sticky={{ start: 0, end: 15 }} style={{ height: 100, width: "100%", display: "flex" }} speed={0} >
+            <div style={{ position: 'absolute', left: 5, top: 5 }}><Socials /></div>
+            <div style={{ position: 'absolute', right: 15, top: 15 }}><PlayButton /></div>
+          </ParallaxLayer>}
+        {/* only shown on mobile */}
+
         <ParallaxLayer offset={20} speed={0.5} style={{ ...alignCenter, justifyContent: 'center' }}>
-          <p style={{fontSize:20}}>Thank you for taking the time to look at my website, check the top left for links to my socials.</p>
+          <p style={{fontSize:20, margin:'5px'}}>Thank you for taking the time to look at my website, check the top left for links to my socials.</p>
         </ParallaxLayer>
       </Parallax>
     </div>
