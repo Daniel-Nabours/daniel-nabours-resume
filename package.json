@@ -2,7 +2,7 @@
   "name": "daniel-nabours-resume",
   "version": "0.1.0",
   "private": true,
-  "title":"Daniel Nabours Portfolio",
+  "title":"Daniel Nabours Portfolio", 
   "dependencies": {
     "@react-spring/parallax": "^9.4.3",
     "@react-spring/types": "^9.4.3",

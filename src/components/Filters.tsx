@@ -43,7 +43,7 @@ export const Filters: React.FC<FilterProps> = ({ skills, active, setFiltered, se
     return (
         <div className="filter-container">
             <h1 style={{ textAlign: "center" }}>Filter items</h1>
-            <div style={{ display: "flex", flexDirection: 'row', justifyContent: "space-around" }}>
+            <div style={{ display: "flex", flexDirection: 'row', justifyContent: "center" }}>
                 <button className={`${active === "All" ? "active" : ""}`} onClick={() => { setActive("All") }}>All</button>
                 <button className={`${active === "Language" ? "active" : ""}`} onClick={() => { setActive("Language") }}>Languages</button>
                 <button className={`${active === "Framework" ? "active" : ""}`} onClick={() => { setActive("Framework") }}>Frameworks</button>
@@ -52,7 +52,7 @@ export const Filters: React.FC<FilterProps> = ({ skills, active, setFiltered, se
             </div>
 
             <h1 style={{ textAlign: "center" }}>Sort</h1>
-            <div style={{ display: "flex", flexDirection: 'row', justifyContent: "space-around" }}>
+            <div style={{ display: "flex", flexDirection: 'row', justifyContent: "center" }}>
                 <button className={`${sortMethod === "abc" ? "active" : ""}`} onClick={() => { setSortMethod("abc") }}>Alphabetical</button>
                 <button className={`${sortMethod === "level" ? "active" : ""}`} onClick={() => { setSortMethod("level") }}>By skill</button>
             </div>

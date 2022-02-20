@@ -59,7 +59,7 @@ export const SkillsSection: React.FC = () => {
                                 layout
                                 key={`${s.name}${s.level}`}
                                 className='card'>
-                                <h1 style={{fontSize:'1rem'}}>{s.name}</h1>
+                                <h1 style={{fontSize:'0.7rem'}}>{s.name}</h1>
                                 <Bar percent={s.level} />
                             </motion.div>
                         ))}

@@ -86,7 +86,7 @@ function App() {
         {/* Personal history section */}
         <ParallaxLayer offset={2} speed={1} sticky={{ start: 2, end: 3 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
           <div className="blurb parallax sticky">
-            <p>Software Test Analyst</p>
+            <p style={{ fontSize: '2rem' }}>Software Test Analyst</p>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={2} speed={1} sticky={{ start: 2.33, end: 2.67 }} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
@@ -96,7 +96,7 @@ function App() {
         </ParallaxLayer>
         <ParallaxLayer offset={3} speed={1} sticky={{ start: 4, end: 5 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
           <div className="blurb parallax sticky ">
-            <p>Junior Software Engineer</p>
+            <p style={{ fontSize: '2rem' }}>Junior Software Engineer</p>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={3} speed={1} sticky={{ start: 4.33, end: 4.67 }} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
@@ -106,7 +106,7 @@ function App() {
         </ParallaxLayer>
         <ParallaxLayer offset={4} speed={1} sticky={{ start: 6, end: 7 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
           <div className="blurb parallax sticky">
-            <p>Database Maintenance Technician</p>
+            <p style={{ fontSize: '2rem' }}>Database Maintenance Technician</p>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={4} speed={1} sticky={{ start: 6.33, end: 6.67 }} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
@@ -116,7 +116,7 @@ function App() {
         </ParallaxLayer>
         <ParallaxLayer offset={5} speed={1} sticky={{ start: 8, end: 9 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
           <div className="blurb parallax sticky">
-            <p>Lead Database Maintenance Technician</p>
+            <p style={{ fontSize: '2rem' }}>Lead Database Maintenance Technician</p>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={5} speed={1} sticky={{ start: 8.33, end: 8.67 }} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
@@ -126,7 +126,7 @@ function App() {
         </ParallaxLayer>
         <ParallaxLayer offset={6} speed={1} sticky={{ start: 10, end: 11 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
           <div className="blurb parallax sticky">
-            <p>NCOIC, Cloud Development</p>
+            <p style={{ fontSize: '2rem' }}>NCOIC, Cloud Development</p>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={6} speed={1} sticky={{ start: 10.33, end: 10.67 }} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
@@ -136,7 +136,7 @@ function App() {
         </ParallaxLayer>
         <ParallaxLayer offset={7} speed={1} sticky={{ start: 12, end: 13 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
           <div className="blurb parallax sticky">
-            <p>Front End Lead, Hyve</p>
+            <p style={{fontSize:'2rem'}}>Front End Lead, Hyve</p>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={7} speed={1} sticky={{ start: 12.33, end: 12.67 }} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
@@ -163,14 +163,14 @@ function App() {
         </ParallaxLayer>
 
         {/* only shown on mobile */}
-        {window.innerWidth <= 600 &&
+        {/* {window.innerWidth <= 600 &&
           <ParallaxLayer offset={0} sticky={{ start: 0, end: 15 }} style={{ height: 100, width: "100%", display: "flex" }} speed={0} >
             <div style={{ position: 'absolute', left: 5, top: 5 }}><Socials /></div>
             <div style={{ position: 'absolute', right: 15, top: 15 }}><PlayButton /></div>
           </ParallaxLayer>}
-        {/* only shown on mobile */}
+        only shown on mobile */}
 
-        <ParallaxLayer offset={20} speed={0.5} style={{ ...alignCenter, justifyContent: 'center' }}>
+        <ParallaxLayer offset={20} speed={1} style={{ ...alignCenter, justifyContent: 'center' }}>
           <p style={{fontSize:20, margin:'5px'}}>Thank you for taking the time to look at my website, check the top left for links to my socials.</p>
         </ParallaxLayer>
       </Parallax>
